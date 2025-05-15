@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^7.3.13",
     "axios": "^1.9.0",
     "expo": "~53.0.9",
     "expo-status-bar": "~2.2.3",
