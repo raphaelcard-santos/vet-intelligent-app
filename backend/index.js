@@ -13,7 +13,8 @@ app.use(express.json());
 // Importa rotas
 const userRoutes = require("./src/routes/userRoutes");
 const tutorRoutes = require("./src/routes/tutorRoutes");
-const animalRoutes = require("./src/routes/animalRoutes"); // Adiciona rotas de animais
+const animalRoutes = require("./src/routes/animalRoutes");
+const veterinarioRoutes = require("./src/routes/veterinarioRoutes"); // Adiciona rotas de veterinários
 
 // Rota de teste
 app.get("/", (req, res) => {
@@ -23,7 +24,8 @@ app.get("/", (req, res) => {
 // Define o prefixo para as rotas da API
 app.use("/api/usuarios", userRoutes);
 app.use("/api/tutores", tutorRoutes);
-app.use("/api/animais", animalRoutes); // Define prefixo para animais
+app.use("/api/animais", animalRoutes);
+app.use("/api/veterinarios", veterinarioRoutes); // Define prefixo para veterinários
 
 app.listen(PORT, () => {
   console.log(`Servidor backend rodando na porta ${PORT}`);
