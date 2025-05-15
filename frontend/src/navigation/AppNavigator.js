@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; // Import Tab Navigator
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AuthNavigator from './AuthNavigator';
 import TutorNavigator from './TutorNavigator';
-import AnimalNavigator from './AnimalNavigator'; // Import AnimalNavigator
+import AnimalNavigator from './AnimalNavigator';
+import VeterinarioNavigator from './VeterinarioNavigator'; // Import VeterinarioNavigator
+import ClinicaNavigator from './ClinicaNavigator'; // Import ClinicaNavigator
 
 // Simulação de um estado de autenticação
 const userIsAuthenticated = true; // Mude para false para testar o fluxo de AuthNavigator
@@ -26,6 +28,16 @@ const MainAppTabs = () => {
         name="AnimaisTab" 
         component={AnimalNavigator} 
         options={{ title: 'Animais' }} // Ícone pode ser adicionado aqui
+      />
+      <Tab.Screen 
+        name="VeterinariosTab" 
+        component={VeterinarioNavigator} 
+        options={{ title: 'Veterinários' }} // Ícone pode ser adicionado aqui
+      />
+      <Tab.Screen 
+        name="ClinicasTab" 
+        component={ClinicaNavigator} 
+        options={{ title: 'Clínicas' }} // Ícone pode ser adicionado aqui
       />
       {/* Adicionar outras abas principais aqui (Ex: Consultas, Diagnósticos) */}
     </Tab.Navigator>
