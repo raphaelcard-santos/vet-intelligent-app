@@ -14,7 +14,8 @@ app.use(express.json());
 const userRoutes = require("./src/routes/userRoutes");
 const tutorRoutes = require("./src/routes/tutorRoutes");
 const animalRoutes = require("./src/routes/animalRoutes");
-const veterinarioRoutes = require("./src/routes/veterinarioRoutes"); // Adiciona rotas de veterinários
+const veterinarioRoutes = require("./src/routes/veterinarioRoutes");
+const clinicaRoutes = require("./src/routes/clinicaRoutes"); // Adiciona rotas de clínicas
 
 // Rota de teste
 app.get("/", (req, res) => {
@@ -25,7 +26,8 @@ app.get("/", (req, res) => {
 app.use("/api/usuarios", userRoutes);
 app.use("/api/tutores", tutorRoutes);
 app.use("/api/animais", animalRoutes);
-app.use("/api/veterinarios", veterinarioRoutes); // Define prefixo para veterinários
+app.use("/api/veterinarios", veterinarioRoutes);
+app.use("/api/clinicas", clinicaRoutes); // Define prefixo para clínicas
 
 app.listen(PORT, () => {
   console.log(`Servidor backend rodando na porta ${PORT}`);
