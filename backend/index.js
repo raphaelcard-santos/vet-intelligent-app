@@ -16,6 +16,7 @@ const tutorRoutes = require("./src/routes/tutorRoutes");
 const animalRoutes = require("./src/routes/animalRoutes");
 const veterinarioRoutes = require("./src/routes/veterinarioRoutes");
 const clinicaRoutes = require("./src/routes/clinicaRoutes"); // Adiciona rotas de clínicas
+const diagnosticoRoutes = require("./src/routes/diagnosticoRoutes"); // Adiciona rotas de diagnóstico
 
 // Rota de teste
 app.get("/", (req, res) => {
@@ -28,6 +29,7 @@ app.use("/api/tutores", tutorRoutes);
 app.use("/api/animais", animalRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/clinicas", clinicaRoutes); // Define prefixo para clínicas
+app.use("/api/diagnostico", diagnosticoRoutes); // Define prefixo para diagnóstico
 
 app.listen(PORT, () => {
   console.log(`Servidor backend rodando na porta ${PORT}`);

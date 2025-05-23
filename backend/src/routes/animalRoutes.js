@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const animalController = require("../controllers/animalController");
-// const { protect, authorize } = require("../middleware/authMiddleware"); // Futuramente para proteger rotas
+// const { protect, authorize } = require("../middleware/auth.js"); // Futuramente para proteger rotas
 
 // Rotas para Animais
 router.post("/", animalController.createAnimal); // Criar novo animal

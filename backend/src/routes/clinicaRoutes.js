@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const clinicaController = require("../controllers/clinicaController");
-// const { protect, authorize } = require("../middleware/authMiddleware"); // Futuramente para proteger rotas
+// const { protect, authorize } = require("../middleware/auth.js"); // Futuramente para proteger rotas
 
 // Rotas para Clínicas
 router.post("/", clinicaController.createClinica);
