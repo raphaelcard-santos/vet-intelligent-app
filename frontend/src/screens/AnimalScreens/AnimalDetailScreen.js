@@ -62,6 +62,14 @@ const AnimalDetailScreen = ({ route, navigation }) => {
     );
   };
 
+  // Função para iniciar o fluxo de diagnóstico com IA
+  const handleIniciarDiagnostico = () => {
+    navigation.navigate('DiagnosticoFlow', {
+      screen: 'DiagnosticoInput',
+      params: { animalId: animalId, animalInfo: animal }
+    });
+  };
+
   if (loading) {
     return <ActivityIndicator style={styles.loader} size="large" color="#0000ff" />;
   }
@@ -144,6 +152,15 @@ const AnimalDetailScreen = ({ route, navigation }) => {
           <Text style={styles.valueFullWidth}>{animal.observacoes}</Text>
         </View>
       )}
+
+      {/* Botão para iniciar diagnóstico com IA */}
+      <View style={styles.diagnosticoContainer}>
+        <Button 
+          title="Iniciar Diagnóstico com IA" 
+          onPress={handleIniciarDiagnostico} 
+          color="#6200ee" // Cor destacada para o botão de diagnóstico
+        />
+      </View>
 
       <View style={styles.buttonContainer}>
         <Button 
@@ -231,8 +248,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 4,
   },
-  buttonContainer: {
+  diagnosticoContainer: {
     marginTop: 30,
+    marginBottom: 10,
+    backgroundColor: '#f0f0ff', // Fundo suave para destacar a área
+    padding: 15,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#d0d0ff',
+  },
+  buttonContainer: {
+    marginTop: 20,
     marginBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -240,4 +266,3 @@ const styles = StyleSheet.create({
 });
 
 export default AnimalDetailScreen;
-

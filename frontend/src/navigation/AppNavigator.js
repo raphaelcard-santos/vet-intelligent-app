@@ -8,6 +8,7 @@ import TutorNavigator from './TutorNavigator';
 import AnimalNavigator from './AnimalNavigator';
 import VeterinarioNavigator from './VeterinarioNavigator'; // Import VeterinarioNavigator
 import ClinicaNavigator from './ClinicaNavigator'; // Import ClinicaNavigator
+import DiagnosticoNavigator from './DiagnosticoNavigator'; // Import DiagnosticoNavigator
 
 // Simulação de um estado de autenticação
 const userIsAuthenticated = true; // Mude para false para testar o fluxo de AuthNavigator
@@ -50,7 +51,11 @@ const MainAppNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {userIsAuthenticated ? (
-        <Stack.Screen name="AppCore" component={MainAppTabs} /> 
+        <>
+          <Stack.Screen name="AppCore" component={MainAppTabs} />
+          {/* Fluxos que não fazem parte das abas principais, mas são acessíveis a partir delas */}
+          <Stack.Screen name="DiagnosticoFlow" component={DiagnosticoNavigator} />
+        </>
       ) : (
         <Stack.Screen name="AuthFlow" component={AuthNavigator} />
       )}
@@ -67,4 +72,3 @@ const AppNavigator = () => {
 };
 
 export default AppNavigator;
-
